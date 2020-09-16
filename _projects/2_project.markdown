@@ -1,77 +1,21 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
+title: Transcriptomics of aging
+description: Using machine learning techniques to find signals of aging in RNAseq data, with the goal of developing a biologial age predictor
 img: /assets/img/3.jpg
-importance: 2
+importance: 1
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Aging is the progressive loss of cellular homeostasis, leading to an overall decline of organismal fitness. Over the past 30 years, the contributions of numerous molecular mechanisms and pathways that define the etiology of the aging process have been elucidated; for a review see Lopez-Otın et al. (Cell, 153(6):1194–217). Aged tissues also display a general increase in transcriptional noise and a loss of regulation (Harries et al., Aging Cell,10(5):868–78) and display systematic and predictable changes in methylation with age (Horvath, Genome Biol., 14(10):R115). Finally there is a marked heterogeneity in human lifespan and health outcomes for people of the same chronological age. Thus, one fundamental challenge is to identify biomarkers of aging that could predict remaining lifespan. Such predictors would be useful in evaluating lifestyle changes and therapeutic strategies in the pursuit of healthy aging.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The findings above suggest that there could be signals in RNAseq of a tissue that would be able to predict the donor’s chronological age. Potentially this signal could encode “biological age”, which would more reliably predict the donor’s remaining lifespan or healthspan than their chronological age. Dermal fibroblasts can be obtained non-invasively, and they have a low proliferative rate which makes them likely to retain damage that occurs with age (Tigges et al, Mech Ageing Dev,138:2644). Thus my collaborators in the Hetzer lab collected genome-wide RNA-seq profiles of human dermal fibroblasts from 133 people aged 1 to 94 years old. We used a leave-one-out cross-validation protocol to predict a donor’s age from their RNA-seq data. This was done with both standard regression techniques and a novel ensemble classifier I invented. The ensemble classifier performed the best, predicting donor age with median error of four years. Furthermore the ensemble technique was the only one that predicted samples from Progeria patients as being older than age-matched controls. In Progeria, mutations in the nuclear envelope protein LaminA/C lead to a premature aging phenotype with lifespan dramatically shortened to an average of 14 years. Thus these results suggest that the ensemble classifier is responding to RNAseq changes that encode biological age.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- JG Fleischer, R Schulte, HH Tsai, S Tyagi, A Ibarra, MN Shokhirev, L Huang, MW Hetzer, S Navlakha (2018). Predicting age from the transcriptome of human dermal fibroblasts. Genome Biology, 19:221.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/1.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/3.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/5.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/5.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+I believe strongly in open science. The software for the ensemble classifier is open source and available on GitHub. The repository is actively maintained and users with questions and requests are answered quickly. Likewise, the RNAseq dataset, the largest ever collection of bulk skin fibroblasts with a wide range of patient ages, is available freely on Gene Expression Omnibus.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal it's glory in the next row of images.
+I have been working on extending the ensemble classifiers so that a model trained on one dataset will produce accurate age prediction on another dataset, a necessary step if this technique is to become a tool for research or clinical uses. Batch effects among RNAseq data sets make this challenging. When datasets have different age distributions, combining the datasets with standard techniques like ComBat is not generally effective for age prediction. The differential aging signal in each dataset can be confused for a batch effect and removed by the batch correction algorithm.
 
+- JG Fleischer, R Schulte, HH Tsai, S Tyagi, A Ibarra, MN Shokhirev, L Huang, MW Hetzer, S Navlakha, J Mertens, and R Gage (2019) Predicting age from the transcriptome of human dermal fibroblasts both within and across datasets. Poster at The Salk Institute Integrative Biology Syposium
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/6.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/11.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/" target="_blank">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/6.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/11.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-```
+To address this issue of cross-batch age prediction, I am working in several directions. Firstly, I am exploring additional published algorithms for batch correction testing their abilities to remove batch effects while maintaining a signal of age in situations where age and batch are confounded. Secondly, I am exploring the use of different biomarkers that may be less susceptible to batch problems such as Illumina methylome arrays. Lastly, I am using public RNAseq data to find useful age-predicting features (transformations of the data) that may be invariant to batch effects. Finally in collaboration with the Gage lab at Salk I am investigating if any of the age prediction methods above show interesting results when tested on patients that either have a neurodegenerative disease or are at risk of developing such a disease. Many of the same pathways associated with aging are also involved in neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and amyotrophic lateral sclerosis/frontotemporal dementia (ALS/FTD). The risk of developing these diseases highly correlates with age, and it, is difficult to predict susceptibility because the vast majority of cases are sporadic, i.e., lacking a well-defined genetic component. With further development this age prediction approach may have both clinical applications and use as a tool for evaluating potential treatments.
