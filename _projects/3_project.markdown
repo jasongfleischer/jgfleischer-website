@@ -2,8 +2,9 @@
 layout: page
 title: Human circadian health
 description: Analysis of clinical trials and data from wearable sensors looking for effects of timing on eating, sleeping, and health outcomes.
-img: /assets/img/7.jpg
+img: /assets/img/clock3417-7.jpg
 importance: 2
+category: research
 ---
 
 

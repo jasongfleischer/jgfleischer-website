@@ -2,8 +2,9 @@
 layout: page
 title: Embodied neural models 
 description:  Using neural models controling robot bodies to study how the nervous system, body, and environment interact to produce behavior
-img: /assets/img/12.jpg
+img: /assets/img/darwinxii.jpg
 importance: 3
+category: research
 ---
 To understand adaptive behavior, it is important to realize that the nervous system does not function in isolation. The brain is embodied, and the body is embedded in the environment. The properties, mechanisms, and functions of the nervous system arise only as it interacts with the rest of the body and as the animal behaves in the world.
 

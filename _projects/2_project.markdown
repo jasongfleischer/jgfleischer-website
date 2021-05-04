@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Transcriptomics of aging
+title: Predicting age from gene transcription
 description: Using machine learning techniques to find signals of aging in RNAseq data, with the goal of developing a biologial age predictor
-img: /assets/img/3.jpg
+img: /assets/img/EnsembleLDA.jpg
 importance: 1
+category: research
 ---
 
 Aging is the progressive loss of cellular homeostasis, leading to an overall decline of organismal fitness. Over the past 30 years, the contributions of numerous molecular mechanisms and pathways that define the etiology of the aging process have been elucidated; for a review see Lopez-Otın et al. (Cell, 153(6):1194–217). Aged tissues also display a general increase in transcriptional noise and a loss of regulation (Harries et al., Aging Cell,10(5):868–78) and display systematic and predictable changes in methylation with age (Horvath, Genome Biol., 14(10):R115). Finally there is a marked heterogeneity in human lifespan and health outcomes for people of the same chronological age. Thus, one fundamental challenge is to identify biomarkers of aging that could predict remaining lifespan. Such predictors would be useful in evaluating lifestyle changes and therapeutic strategies in the pursuit of healthy aging.

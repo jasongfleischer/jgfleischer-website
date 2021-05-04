@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: Warning this page is a work in progress
 nav: true
-display_categories: [work, fun]
+display_categories: [research,fun]
 horizontal: false
 ---
 <div class="projects">
